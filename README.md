@@ -1,6 +1,9 @@
 # WEB
+
 Lập trình web
+
 TẠO SOLUTION GỒM CÁC PROJECT SAU:
+
 DLL đa năng, keyword: c# window library -> Class Library (.NET Framework) bắt buộc sử dụng .NET Framework 2.0: giải bài toán bất kỳ, độc lạ càng tốt, phải có dấu ấn cá nhân trong kết quả, biên dịch ra DLL. DLL độc lập vì nó ko nhập, ko xuất, nó nhận input truyền vào thuộc tính của nó, và trả về dữ liệu thông qua thuộc tính khác, hoặc thông qua giá trị trả về của hàm. Nó độc lập thì sẽ sử dụng được trên app dạng console (giao diện dòng lệnh - đen sì), cũng sử dụng được trên app desktop (dạng cửa sổ), và cũng sử dụng được trên web form (web chạy qua iis).
 Console app, bắt buộc sử dụng .NET Framework 2.0, sử dụng được DLL trên: nhập được input, gọi DLL, hiển thị kết quả, phải có dấu án cá nhân. keyword: c# window Console => Console App (.NET Framework), biên dịch ra EXE
 Windows Form Application, bắt buộc sử dụng .NET Framework 2.0**, sử dụng được DLL đa năng trên, kéo các control vào để có thể lấy đc input, gọi DLL truyền input để lấy đc kq, hiển thị kq ra window form, phải có dấu án cá nhân; keyword: c# window Desktop => Windows Form Application (.NET Framework), biên dịch ra EXE
@@ -138,14 +141,51 @@ Bước 5: Cấu hình chạy bằng Visual Studio Development Server
 
 Chuột phải project → Properties → Web
 
-Chọn Use Visual Studio Development Server (mặc định)
-
-Port tự động sinh hoặc bạn đặt cố định (ví dụ 5000)
+Chọn Local IIS và chọn domain ảo:
 
 Nhấn Save
 
+<img width="1051" height="556" alt="image" src="https://github.com/user-attachments/assets/3f0f413d-0dad-40b3-b5de-899c6cd8cc20" />
 
+Bước tiếp theo: kiểm tra cấu hình để chạy DLL
 
+App Pool
+
+Vào IIS Manager → Application Pools → tìm pool của site LoveWeb
+
+.NET Framework Version → v2.0
+
+Managed pipeline → Classic
+
+<img width="399" height="349" alt="image" src="https://github.com/user-attachments/assets/0b102f08-183a-41da-883f-7cf9bb960cc9" />
+
+Gán site LoveWeb vào App Pool
+
+Trong IIS Manager → Sites → LoveWeb
+
+Chuột phải site → Manage Website → Advanced Settings…
+
+Tìm Application Pool → chọn LoveWebPool
+
+Nhấn OK
+
+<img width="448" height="300" alt="image" src="https://github.com/user-attachments/assets/176ad1eb-de34-47f2-b9d7-fcd01df7a5bb" />
+
+Bước 4: Kiểm tra
+
+Pool LoveWebPool đang chạy → màu xanh
+
+Site LoveWeb trỏ đúng folder project, folder bin có Love.dll
+
+Test bằng trình duyệt:
+
+http://localhost/LoveWeb/index.html
+
+<img width="472" height="209" alt="image" src="https://github.com/user-attachments/assets/f19daa5f-8057-4c1f-871a-bf342d34d58f" />
+
+→ Nhập ngày → bấm “Tính ngay” → kết quả hiển thị đúng
+
+<img width="532" height="303" alt="image" src="https://github.com/user-attachments/assets/7cd8849b-9e9e-43da-a103-5afc393b1234" />
 
 
 
