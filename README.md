@@ -5,7 +5,8 @@ DLL đa năng, keyword: c# window library -> Class Library (.NET Framework) bắ
 Console app, bắt buộc sử dụng .NET Framework 2.0, sử dụng được DLL trên: nhập được input, gọi DLL, hiển thị kết quả, phải có dấu án cá nhân. keyword: c# window Console => Console App (.NET Framework), biên dịch ra EXE
 Windows Form Application, bắt buộc sử dụng .NET Framework 2.0**, sử dụng được DLL đa năng trên, kéo các control vào để có thể lấy đc input, gọi DLL truyền input để lấy đc kq, hiển thị kq ra window form, phải có dấu án cá nhân; keyword: c# window Desktop => Windows Form Application (.NET Framework), biên dịch ra EXE
 Web đơn giản, bắt buộc sử dụng .NET Framework 2.0, sử dụng web server là IIS, dùng file hosts để tự tạo domain, gắn domain này vào iis, file index.html có sử dụng html css js để xây dựng giao diện nhập được các input cho bài toán, dùng mã js để tiền xử lý dữ liệu, js để gửi lên backend. backend là api.aspx, trong code của api.aspx.cs thì lấy được các input mà js gửi lên, rồi sử dụng được DLL đa năng trên. kết quả gửi lại json cho client, js phía client sẽ nhận được json này hậu xử lý để thay đổi giao diện theo dữ liệu nhận dược, phải có dấu án cá nhân. keyword: c# window web => ASP.NET Web Application (.NET Framework) + tham khảo link chatgpt thầy gửi. project web này biên dịch ra DLL, phải kết hợp với IIS mới chạy được.
----------------------------------
+
+----------------------------------------
 Thiết kế xây dựng web đếm ngày yêu đơn giản , thực hiện 4 project lần lượt như sau:
 PROJECT 1 – Love.dll
 Bước 1: Tạo project Class Library
@@ -123,8 +124,25 @@ Bước 3: Tạo file index.html (front-end)
 
 Chuột phải project → Add → New Item → HTML Page → Name: index.html
 
+<img width="1693" height="915" alt="image" src="https://github.com/user-attachments/assets/0a408971-b1ec-4b17-b64f-fe29573dbc3b" />
 
+Bước 4: Tạo api.aspx (backend)
 
+Chuột phải project → Add → New Item → Web Form → Name: api.aspx
+
+Chọn Place code in separate file (code-behind) → OK
+
+<img width="1701" height="933" alt="image" src="https://github.com/user-attachments/assets/ad827463-476c-48ca-ae56-81eeb6a98469" />
+
+Bước 5: Cấu hình chạy bằng Visual Studio Development Server
+
+Chuột phải project → Properties → Web
+
+Chọn Use Visual Studio Development Server (mặc định)
+
+Port tự động sinh hoặc bạn đặt cố định (ví dụ 5000)
+
+Nhấn Save
 
 
 
